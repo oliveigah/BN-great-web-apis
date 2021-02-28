@@ -10,7 +10,20 @@ defmodule BnGreatWebApis.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      # Docs
+      name: "Design and Build Great Web APIs",
+      source_url: "https://github.com/oliveigah/BN-great-web-apis",
+      homepage_url: "https://techfromscratch.com.br/book-notes/great-web-apis",
+      docs: [
+        # The main page in the docs
+        main: "chapter_1",
+        logo: "logo.png",
+        extras: [
+          "./lib/chapters/chapter_1/chapter_1.md"
+        ],
+        groups_for_modules: []
+      ]
     ]
   end
 
@@ -44,7 +57,8 @@ defmodule BnGreatWebApis.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 
